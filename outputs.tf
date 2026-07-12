@@ -1,3 +1,7 @@
+output "dev_center_catalogs_id" {
+  description = "Map of id values across all dev_center_catalogs, keyed the same as var.dev_center_catalogs"
+  value       = { for k, v in azurerm_dev_center_catalog.dev_center_catalogs : k => v.id }
+}
 output "dev_center_catalogs_catalog_adogit" {
   description = "Map of catalog_adogit values across all dev_center_catalogs, keyed the same as var.dev_center_catalogs"
   value       = { for k, v in azurerm_dev_center_catalog.dev_center_catalogs : k => v.catalog_adogit }
